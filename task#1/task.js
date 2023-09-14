@@ -12,8 +12,8 @@ class dropDown {
     getLink() {
         this.list.classList.add('dropdown__list_active');
         this.links.forEach((e) => {
-            e.onclick = () => {return false};
-            e.addEventListener('click', () => {
+            e.addEventListener('click', (event) => {
+                event.preventDefault();
                 this.value.textContent = e.textContent;
                 this.list.classList = 'dropdown__list';
             });
